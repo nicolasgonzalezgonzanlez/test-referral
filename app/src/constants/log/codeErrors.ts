@@ -1,0 +1,3 @@
+const codeErrors = {};
+
+export { codeErrors };

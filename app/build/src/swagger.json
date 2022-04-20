@@ -1,0 +1,79 @@
+{
+	"basePath": "/api",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {},
+	"info": {
+		"title": "referral-program-service",
+		"version": "0.0.1",
+		"license": {
+			"name": "ISC"
+		}
+	},
+	"paths": {
+		"/applicationSettings": {
+			"post": {
+				"operationId": "InsertApplicationSettings",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"additionalProperties": true,
+							"type": "object"
+						}
+					}
+				},
+				"tags": [
+					"applicationSettings"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"type": "object"
+						}
+					}
+				]
+			},
+			"get": {
+				"operationId": "GetAllApplicationSettings",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"additionalProperties": true,
+							"type": "object"
+						}
+					}
+				},
+				"tags": [
+					"applicationSettings"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {
+		"Auth": {
+			"type": "apiKey",
+			"name": "Authorization",
+			"in": "header"
+		}
+	},
+	"host": "localhost:4000"
+}

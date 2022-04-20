@@ -1,0 +1,11 @@
+export const ok = 200;
+export const created = 201;
+export const accepted = 202;
+export const badRequest = 400;
+export const unauthorized = 401;
+export const forbidden = 403;
+export const notFound = 404;
+export const requestTimeout = 408;
+export const internalServerError = 500;
+export const badGateway = 502;
+export const preconditionFailed= 412;
