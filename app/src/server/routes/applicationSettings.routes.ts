@@ -2,12 +2,12 @@ import { Router } from 'express';
 import { Request, Response, NextFunction } from 'express';
 import { authRestrict } from '../middleware';
 import { ok } from '../../constants/statusCode';
-import applicationSettings from '../controller/applicationSettingsController'
+import applicationSetting from '../controller/applicationSettingController'
 // @ts-ignore
 //import logger from '@telecom-argentina/logger';
 
 const router: Router = Router();
-const controller = new applicationSettings();
+const controller = new applicationSetting();
 
 
 router.post('/',  async (req: Request, res: Response, next: NextFunction) => {

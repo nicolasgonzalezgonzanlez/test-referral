@@ -1,6 +1,6 @@
-import {applicationSettingsRepository} from '../infraestructure/repository/applicationSettingsRepository'
+import {applicationSettingRepository} from '../infraestructure/repository/applicationSettingsRepository'
 
-const repository = new applicationSettingsRepository();
+const repository = new applicationSettingRepository();
 
 const insertApplicationSetting = async (applicationSettings: any): Promise<any> => {
   const response = await repository.insertApplicationSettings(applicationSettings)

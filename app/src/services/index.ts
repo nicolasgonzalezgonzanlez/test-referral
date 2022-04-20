@@ -1,5 +1,5 @@
-import  applicationSettingsService  from './applicationSettingsService'
+import  applicationSettingService  from './applicationSettingService'
 
 export {
-  applicationSettingsService
+  applicationSettingService
 }
