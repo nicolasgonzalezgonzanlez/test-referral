@@ -27,19 +27,7 @@ const {
 const app: Application = express();
 const server = http.createServer(app);
 
-let origin: any = ['*'];
-if (config.corsUrls) {
-  origin = config.corsUrls.toString().split(',');
-}
-let corsOptions: cors.CorsOptions = {
-  origin: origin,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: false,
-  credentials: true,
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
-};
-// dejar cors por defecto
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
