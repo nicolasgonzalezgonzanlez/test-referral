@@ -5,10 +5,6 @@ type TServer = {
   killTimeout: TEnv;
 };
 
-type TMicroservices = {
-  ms_client: TEnv;
-  ms_home: TEnv;
-};
 
 type TSqlDB = {
   username: TEnv;
@@ -17,6 +13,8 @@ type TSqlDB = {
   password: TEnv;
   database: TEnv;
   type: TEnv;
+  logging: TEnv,
+  synchronize: TEnv
 };
 
 type THeaders = {
@@ -70,19 +68,8 @@ type TCCache = {
 type TConfig = {
   server: TServer;
   sqlDb: TSqlDB;
-  axiosTuID: TAxios;
-  axiosBhub: TBhub;
-  axiosClubPersonal: TCPersonal;
-  axiosPaymentService: TPService;
-  axiosClient: TClientService;
   corsUrls: TEnv;
   internalApiUrl: TEnv;
-  promotionsQuantity: TEnv;
-  runSubscribeCashback: TEnv;
-  secretPasswordKey: TEnv;
-  onlyPromotionsThatHaveBanner: TEnv;
-  redis: TCRedisCache;
-  firstPaymentCard: TEnv;
 };
 
 export { TConfig, TEnv };

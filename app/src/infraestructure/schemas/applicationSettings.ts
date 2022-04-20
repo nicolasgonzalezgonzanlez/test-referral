@@ -3,7 +3,7 @@ import { applicationSettings } from '../entities';
 import {AuditColumnSchemaPart} from './audit'
 
 export const applicationSettingsSchema = new EntitySchema<applicationSettings>({
-  name: 'application_settings',
+  name: 'application_setting',
   columns: {
     keys: {
       type: String,

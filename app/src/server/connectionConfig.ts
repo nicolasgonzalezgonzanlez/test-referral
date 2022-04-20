@@ -1,12 +1,14 @@
-import { DataSource } from 'typeorm'
+import { DataSource, DataSourceOptions } from 'typeorm'
 import config from '../config'
 import { applicationSettingsSchema } from '../infraestructure/schemas'
 
 const connectionConfig = () => {
-  const AppDataSource = new DataSource({
+  const dataSourceOptions : DataSourceOptions = {
     ...config.sqlDb,
-    entities: [applicationSettingsSchema],
-  })
+    entities: [applicationSettingsSchema]
+  } as DataSourceOptions;
+  
+  const AppDataSource = new DataSource(dataSourceOptions)
   AppDataSource.initialize()
     .then(() => {
       // poner un log
