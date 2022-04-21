@@ -1,8 +1,8 @@
 import { EntitySchema } from 'typeorm';
-import { applicationSettings } from '../entities';
+import { applicationSetting } from '../entities';
 import {AuditColumnSchemaPart} from './audit'
 
-export const applicationSettingsSchema = new EntitySchema<applicationSettings>({
+export const applicationSettingEntity = new EntitySchema<applicationSetting>({
   name: 'application_setting',
   columns: {
     keys: {
@@ -17,6 +17,10 @@ export const applicationSettingsSchema = new EntitySchema<applicationSettings>({
     type_key: {
       type: String,
       length: 200,
+    },
+    description: {
+      type: String,
+      length: 500,
     },
     ...AuditColumnSchemaPart
   },

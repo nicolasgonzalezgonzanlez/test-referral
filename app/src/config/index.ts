@@ -6,7 +6,7 @@ const config: TConfig = {
     killTimeout: process.env.SERVER_KILLTIMEOUT,
   },
   sqlDb: {
-    type: process.env.TYPEORM_CONNECTION,
+    type: process.env.TYPEORM_CONNECTION || 'postgres',
     host: process.env.TYPEORM_HOST,
     port: process.env.TYPEORM_PORT,
     username: process.env.TYPEORM_USERNAME,
@@ -19,4 +19,4 @@ const config: TConfig = {
   internalApiUrl: process.env.INTERNAL_API_URL,
 };
 
-export = config;
+export { config }

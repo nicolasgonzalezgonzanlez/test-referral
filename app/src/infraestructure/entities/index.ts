@@ -1,5 +1,5 @@
-import { applicationSettings } from './applicationSettings';
+import { applicationSetting } from './applicationSetting';
 
 export {
-  applicationSettings
+  applicationSetting
 };

@@ -1,5 +1,5 @@
-import { applicationSettingsSchema } from './applicationSettings';
+import { applicationSettingEntity } from './applicationSettingEntity';
 
 export {
-  applicationSettingsSchema,
+  applicationSettingEntity,
 };
