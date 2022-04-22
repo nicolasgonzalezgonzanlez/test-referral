@@ -12,8 +12,9 @@
       "test:watch": "jest --watch",
       "typeorm": "typeorm-ts-node-commonjs",
       "migration:run": "typeorm migration:run",
-      "migration:generate": "typeorm migration:generate",
-      "migration:revert": ""
+      "migration:generate": "ts-node ./node_modules/.bin/typeorm migrations:generate ./src/infraestructure/migrations -d ./src/server/appDataSource.ts",
+      "migration:revert": "",
+      "migration:create": "npx ts-node ./node_modules/.bin/typeorm migrations:create -t --timestamp "
    },
    "keywords": [],
    "author": "BB Squad",
