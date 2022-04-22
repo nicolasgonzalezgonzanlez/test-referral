@@ -10,7 +10,7 @@ export class applicationSettingRepository implements iApplicationSetting {
   }
 
   async insertApplicationSettings(applicationSettings: any): Promise<boolean> {
-    const { keys, value, type_key } = applicationSettings
+    const { keys, value, type_key, description } = applicationSettings
     const now = new Date()
     const {identifiers} = await repository.createQueryBuilder()
     .insert()
@@ -19,6 +19,7 @@ export class applicationSettingRepository implements iApplicationSetting {
       keys,
       value,
       type_key,
+      description,
       created_by: 'nicotest',
       create_date: now,
       row_status: true
