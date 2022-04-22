@@ -9,11 +9,11 @@ const dataSourceOptions : DataSourceOptions = {
     ...config.sqlDb,
     entities: [applicationSettingEntity],
     migrations: [
-      'src/migrations/**/*{.js,.ts}'
+      './migrations/**/*{.js,.ts}'
    ],
    cli: {
-    entitiesDir: "src/infraestructure/schemas",
-    migrationsDir: "src/migrations"
+    entitiesDir: "./infraestructure/schemas",
+    migrationsDir: "./migrations"
   }
   } as DataSourceOptions;
   

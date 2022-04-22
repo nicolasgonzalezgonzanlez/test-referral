@@ -12,8 +12,8 @@ const config: TConfig = {
     username: process.env.TYPEORM_USERNAME,
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
-    logging: process.env.TYPEORM_LOGGING,
-    synchronize: process.env.TYPEORM_SYNCHRONIZE,
+    logging: Boolean(process.env.TYPEORM_LOGGING),
+    synchronize:  Boolean(process.env.TYPEORM_SYNCHRONIZE),
   },
   internalApiUrl: process.env.INTERNAL_API_URL,
 };

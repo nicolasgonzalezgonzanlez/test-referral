@@ -11,8 +11,8 @@ type TSqlDB = {
   username?: string;
   password?: string;
   database?: string;
-  logging?: string
-  synchronize?: string
+  logging?: boolean;
+  synchronize?: boolean;
 }
 type TConfig = {
   server: TServer;
