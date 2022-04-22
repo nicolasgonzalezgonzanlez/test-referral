@@ -15,7 +15,6 @@ const config: TConfig = {
     logging: process.env.TYPEORM_LOGGING,
     synchronize: process.env.TYPEORM_SYNCHRONIZE,
   },
-  corsUrls: process.env.CORS_URLS,
   internalApiUrl: process.env.INTERNAL_API_URL,
 };
 
