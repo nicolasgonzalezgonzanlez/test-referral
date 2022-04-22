@@ -3,11 +3,11 @@ import { DataSource, DataSourceOptions } from 'typeorm'
 const config_env = require('@telecom-argentina/config');
 config_env.config();
 import { config } from '../config'
-import { applicationSettingEntity } from '../infraestructure/schemas'
+import { applicationSettingEntity, userCodeEntity } from '../infraestructure/schemas'
 
 const dataSourceOptions : DataSourceOptions = {
     ...config.sqlDb,
-    entities: [applicationSettingEntity],
+    entities: [applicationSettingEntity, userCodeEntity],
     migrations: [
       './migrations/**/*{.js,.ts}'
    ],
