@@ -1,9 +1,10 @@
+import { applicationSettingRequestDto } from '../dtos/applicationSetting';
 import {applicationSettingRepository} from '../infraestructure/repository/applicationSettingsRepository'
 
 const repository = new applicationSettingRepository();
 
-const insertApplicationSetting = async (applicationSettings: any): Promise<any> => {
-  const response = await repository.insertApplicationSettings(applicationSettings)
+const createApplicationSetting = async (applicationSetting: applicationSettingRequestDto): Promise<any> => {
+  const response = await repository.create(applicationSetting)
   return response;
 };
 
@@ -12,4 +13,4 @@ const getAllApplicationSetting = async (): Promise<any> => {
   return response;
 };
 
-export = { insertApplicationSetting, getAllApplicationSetting };
+export = { createApplicationSetting, getAllApplicationSetting };

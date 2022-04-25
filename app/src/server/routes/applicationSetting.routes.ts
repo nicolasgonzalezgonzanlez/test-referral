@@ -12,7 +12,7 @@ const controller = new applicationSetting();
 
 router.post('/',  async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const responseDto = await controller.insertApplicationSettings(req.body);
+    const responseDto = await controller.createApplicationSetting(req.body);
     res.status(ok).json(responseDto);
   } catch (ex) {
     next(ex);
