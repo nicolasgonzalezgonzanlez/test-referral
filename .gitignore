@@ -11,3 +11,4 @@ app/coverage
 .env
 .idea
 .vscode
+app/.env
