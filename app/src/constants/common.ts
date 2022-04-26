@@ -1,0 +1,1 @@
+export const userDefault = 'system.admin';

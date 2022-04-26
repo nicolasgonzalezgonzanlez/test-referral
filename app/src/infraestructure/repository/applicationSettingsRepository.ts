@@ -1,31 +1,20 @@
+import { userDefault } from './../../constants/common';
 import { applicationSettingEntity } from '../schemas/applicationSettingEntity'
 import { appDataSource } from '../../server/appDataSource'
-import {iApplicationSetting} from '../irepository/iApplicationSettings'
+import { iApplicationSettingRepository } from '../irepository/iApplicationSettingRepository'
+import { applicationSetting } from '../entities';
 
 export const repository = appDataSource.getRepository(applicationSettingEntity)
-export class applicationSettingRepository implements iApplicationSetting {
+export class applicationSettingRepository implements iApplicationSettingRepository {
   
-  async getAll(): Promise<any> {
+  async getAll(): Promise<applicationSetting[]> {
     return repository.find()
   }
 
-  async insertApplicationSettings(applicationSettings: any): Promise<boolean> {
-    const { keys, value, type_key, description } = applicationSettings
-    const now = new Date()
-    const {identifiers} = await repository.createQueryBuilder()
-    .insert()
-    .into(applicationSettingEntity)
-    .values({
-      keys,
-      value,
-      type_key,
-      description,
-      created_by: 'nicotest',
-      create_date: now,
-      row_status: true
-    })
-    .execute()
-  
-    return identifiers.length > 0
+  async create(entity: applicationSetting): Promise<applicationSetting> {
+    entity.created_by = userDefault;
+    entity.create_date = new Date();
+    const result = await repository.save(entity);
+    return result;
   }
 }
