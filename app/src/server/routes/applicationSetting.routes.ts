@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { Request, Response, NextFunction } from 'express';
 import { authRestrict } from '../middleware';
 import { ok } from '../../constants/statusCode';
-import applicationSetting from '../controller/applicationSettingController'
+import applicationSetting from '../controllers/applicationSettingController'
 // @ts-ignore
 //import logger from '@telecom-argentina/logger';
 

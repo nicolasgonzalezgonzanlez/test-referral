@@ -6,17 +6,15 @@ import cors from 'cors';
 const config_env = require('@telecom-argentina/config');
 config_env.config();
 // @ts-ignore
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Application, Response as ExResponse, Request as ExRequest } from 'express';
 import events from './events';
 // Swagger
-import swaggerUI from 'swagger-ui-express';
+import swaggerUi from 'swagger-ui-express';
 // Define routes and events
 import routes, { options } from './routes';
 import { config } from '../config';
 import "reflect-metadata"
 
-
-const swaggerDocument = require('../swagger.json');
 
 //Include middlewares.
 const { traceabilityContext, token2Context, expressLogger } = require('@telecom-argentina/microservice-middlewares');
@@ -40,10 +38,13 @@ app.use(traceabilityContext);
 app.use(token2Context);
 app.use(expressLogger);
 
-swaggerDocument.host = config.internalApiUrl;
-app.use('/docs', swaggerUI.serve);
-app.get('/docs', swaggerUI.setup(swaggerDocument));
+
 app.use('/', routes);
+app.use('/docs', swaggerUi.serve, async (_req: ExRequest, res: ExResponse) => {
+  const Doc = swaggerUi.setup(await import('../../build/src/swagger.json'))
+
+  return res.send(Doc)
+})
 
 // Start listen mode.
 app.listen(port, async () => {

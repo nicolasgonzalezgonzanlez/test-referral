@@ -1,22 +1,13 @@
 {
-  "swagger":{
-    "entryFile": "./src/server/index.ts",
-    "outputDirectory": "./build/src",
-    "host": "localhost:8083",
-    "basePath": "/api/",
-    "noImplicitAdditionalProperties": "silently-remove-extras",
-    "securityDefinitions": {
-      "Auth": {
-        "type": "apiKey",
-        "name": "Authorization",
-        "in": "header"
-      }
-    }
+  "entryFile": "./src/server/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["./src/server/**/*Controller.ts"],
+  "spec": {
+    "outputDirectory": "build/src",
+    "specVersion": 3
   },
-  "routes":{
-    "entryFile": "./src/server/index.ts",
-    "routesDir": "./src",
-    "basePath": "/api/",
-    "authenticationModule": "./src/server/middleware/authRestrict.ts"
+  "routes": {
+    "routesDir": "./build/src",
+    "entryFile": "./src/server/index.ts"
   }
 }
