@@ -5,20 +5,20 @@ type TServer = {
   killTimeout?: string;
 }
 type TSqlDB = {
-  type?: string;
-  host?: string;
-  port?: string;
-  username?: string;
-  password?: string;
-  database?: string;
-  logging?: boolean;
-  synchronize?: boolean;
+  type?: TEnv;
+  host?: TEnv;
+  port?: TEnv;
+  username?: TEnv;
+  password?: TEnv;
+  database?: TEnv;
+  logging?: TEnv;
+  synchronize?: TEnv;
+  migrationTableName: TEnv
 }
 type TConfig = {
   server: TServer;
   sqlDb: TSqlDB;
   internalApiUrl?: string
-
 };
 
 export { TConfig, TEnv };

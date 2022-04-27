@@ -13,8 +13,7 @@ import swaggerUI from 'swagger-ui-express';
 // Define routes and events
 import routes, { options } from './routes';
 import { config } from '../config';
-import "reflect-metadata"
-
+import "reflect-metadata";
 
 const swaggerDocument = require('../swagger.json');
 

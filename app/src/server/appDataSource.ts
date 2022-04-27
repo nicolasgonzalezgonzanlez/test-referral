@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { DataSource, DataSourceOptions } from 'typeorm'
 // @ts-ignore
 const config_env = require('@telecom-argentina/config');
@@ -9,11 +10,11 @@ const dataSourceOptions : DataSourceOptions = {
     ...config.sqlDb,
     entities: [applicationSettingEntity, userCodeEntity],
     migrations: [
-      './migrations/**/*{.js,.ts}'
+      'build/src/migrations/**/*{.js,.ts}'
    ],
    cli: {
-    entitiesDir: "./infraestructure/schemas",
-    migrationsDir: "./migrations"
+    entitiesDir: "build/src/infraestructure/schemas",
+    migrationsDir: "src/migrations"
   }
   } as DataSourceOptions;
   
